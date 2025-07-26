@@ -19,10 +19,8 @@ def driver():
     driver.maximize_window()
     driver.get(home_page)
 
-    try:
-        yield driver
-    finally:
-        driver.quit()
+    yield driver
+    driver.quit()
 
 
 @pytest.fixture(scope="function")
