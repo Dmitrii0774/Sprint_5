@@ -15,7 +15,6 @@ class TestConstructor:
     def test_transition_to_sauces(self, driver):
         """
         Тест перехода в раздел соусов
-
         Шаги:
         1. Переход в раздел соусов
         2. Проверка активности секции
@@ -42,7 +41,6 @@ class TestConstructor:
     def test_transition_to_fillings(self, driver):
         """
         Тест перехода в раздел начинок
-
         Шаги:
         1. Переход в раздел начинок
         2. Проверка активности секции
@@ -69,7 +67,6 @@ class TestConstructor:
     def test_transition_to_buns(self, driver):
         """
         Тест перехода в раздел булок
-
         Шаги:
         1. Переход в раздел начинок (предварительный)
         2. Переход в раздел булок
