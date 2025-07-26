@@ -32,24 +32,34 @@ class TestPersonalCabinet:
 
         # Шаг 4: Проверка элементов формы авторизации
         # Проверка наличия полей ввода
-        WebDriverWait(driver, 5).until(
+        email_field = WebDriverWait(driver, 5).until(
             EC.presence_of_element_located(Locators.EMAIL)
         )
-        WebDriverWait(driver, 5).until(
+        assert email_field.is_displayed(), "Поле email не найдено"
+
+        password_field = WebDriverWait(driver, 5).until(
             EC.presence_of_element_located(Locators.PASSWORD)
         )
+        assert password_field.is_displayed(), "Поле пароля не найдено"
 
         # Проверка наличия кнопки входа
-        WebDriverWait(driver, 5).until(
+        login_button = WebDriverWait(driver, 5).until(
             EC.element_to_be_clickable(Locators.LOGIN)
         )
+        assert login_button.is_enabled(), "Кнопка входа не активна"
 
         # Проверка наличия ссылки на регистрацию
-        WebDriverWait(driver, 5).until(
+        registration_link = WebDriverWait(driver, 5).until(
             EC.presence_of_element_located(Locators.REGISTRATION)
+        )
+        assert registration_link.is_displayed(), (
+            "Ссылка на регистрацию не найдена"
         )
 
         # Проверка наличия ссылки на восстановление пароля
-        WebDriverWait(driver, 5).until(
+        recover_password_link = WebDriverWait(driver, 5).until(
             EC.presence_of_element_located(Locators.RECOVER_PASSWORD)
+        )
+        assert recover_password_link.is_displayed(), (
+            "Ссылка на восстановление пароля не найдена"
         )
